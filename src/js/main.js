@@ -10,7 +10,6 @@
             $(this).closest('.search-block').addClass('active');
             return false;
         }else{
-            console.log('obj');
             $(this).closest('form').submit();
         }
     }); 
@@ -19,7 +18,6 @@
         toggleAct(this);
         toggleAct('.main-menu');
         toggleOverlay();
-        console.log('obj');
     });
 
     $('.overlay').click(function(){
@@ -38,7 +36,6 @@
     }
 
     function toggleAct(e){
-        console.log('e');
         if(!$(e).is('.active')){
             $(e).addClass('active');
         }else{
