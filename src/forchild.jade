@@ -1,0 +1,43 @@
+include _patterns/inner-header
+extends _patterns/inner-template
+
+block main
+	// ========= header ==========
+	+header('bg-forchild.jpg', 'Детям')
+	// ========= header end ==========
+	// ========= content ==========
+	.page__child-programs
+		.child-programs
+			.container
+				.col-50: .child-programs__item.news__item.mp
+					img(src="img/forchild-article-1.jpg", alt="")
+					.news__info
+						.news__subject ПЯТНИЦА 5, 12, 19, 26 августа, 12.00 (Поляна сказок)
+						.news__name Прогулки со Сказочницей 
+						.news__desc Экскурсия  «Лукоморскими тропинками» В Театре сказок  -    чтение   русских народных сказок, проведение мастер-класса по народной кукле
+						.req__enter.free
+						.req__age 8+
+				.col-50: .child-programs__item.news__item.mp
+					img(src="img/forchild-article-2.jpg", alt="")
+					.news__info
+						.news__subject СРЕДА 3, 10, 17,24, 31 августа, 12.00 (Поляна сказок)
+						.news__name Программа «Кот ученый»
+						.news__desc Экскурсия  вдоль берега пруда  «Стихия воды», в Театре сказок – Показ кукольного спектакля  (народные сказки и сказки А.С. Пушкина) - Старинные народные игры 
+						.req__enter.free
+						.req__age 8+
+				.col-66: .child-programs__item.news__item.mp
+					img(src="img/forchild-article-3.jpg", alt="")
+					.news__info
+						.news__subject ВОСКРЕСЕНЬЕ^  7 и 21 августа (Поляна сказок)
+						.news__name Что за прелесть эти сказки
+						.news__desc Игра-эстафета «Викторина на Поляне Сказок» В театре Сказок показ  кукольного спектакля А. Пушкина «Сказка о рыбаке и рыбке»
+						.req__enter От 3 000 руб.
+						.req__age 8+
+				.col-33: .child-programs__item.news__item.mp
+					img(src="img/forchild-article-4.jpg", alt="")
+					.news__info
+						.news__subject Cреда, пятница, воскресенье, 12.00 (Поляна сказок)
+						.news__name Поляна сказок
+						.req__enter.free
+						.req__age 8+
+	// ========= content end ==========

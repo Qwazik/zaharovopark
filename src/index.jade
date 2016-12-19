@@ -1,0 +1,126 @@
+extends _patterns/template
+
+block main
+	// ========== news =============
+	.page__news
+		.container
+			.news
+				.weather-block
+					.weather-block__info
+						.vam
+							.val.hidden
+								span 
+								i.icon.celsius
+							span 
+					.weather-block__ico
+						i.icon.weather
+				a(href="#").main-afisha
+					.inner
+						.icon.calendar
+						span.news__date Расписание
+						span.news__name Афиша<br>мероприятий
+				a(href="#").news__item
+					img(src="img/news__image1.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок 
+				a(href="#").news__item
+					img(src="img/news__image2.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+				a(href="#").news__item
+					img(src="img/news__image3.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+				a(href="#").news__item
+					img(src="img/news__image4.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+				a(href="#").news__item
+					img(src="img/news__image6.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+	// ========== news end =========
+	// ========== events =========
+	section.page__events
+		.container
+			h2 Новости и события
+			.events
+				.row.clearfix
+					.col-33: .events__item
+						.events__text
+							.events__date 29 февраля 2016
+							a(href="#").events__name Поздравляем с Днем российского флага!
+							.events__desc 22 августа в России традиционно отмечают День флага. Праздник посвящен национальной символике российского государства — полотнищу, состоящему из полос белого, синего и алого цвета
+					.col-33: .events__item
+						.events__image
+							img(src="img/news__image7.jpg", alt="")
+						.events__text
+							.events__date 29 февраля 2016
+							a(href="#").events__name Поздравляем с Днем российского флага!
+							.events__desc 22 августа в России традиционно отмечают День флага. Праздник посвящен национальной символике российского государства — полотнищу, состоящему из полос белого, синего и алого цвета
+					.col-33: .events__item
+						.events__text
+							.events__date 29 февраля 2016
+							a(href="#").events__name Поздравляем с Днем российского флага!
+							.events__desc 22 августа в России традиционно отмечают День флага. Праздник посвящен национальной символике российского государства — полотнищу, состоящему из полос белого, синего и алого цвета
+					.col-33: .events__item
+						.events__text
+							.events__date 29 февраля 2016
+							a(href="#").events__name Поздравляем с Днем российского флага!
+							.events__desc 22 августа в России традиционно отмечают День флага. Праздник посвящен национальной символике российского государства — полотнищу, состоящему из полос белого, синего и алого цвета
+					.col-33: .events__item
+						.events__text
+							.events__date 29 февраля 2016
+							a(href="#").events__name Поздравляем с Днем российского флага!
+							.events__desc 22 августа в России традиционно отмечают День флага. Праздник посвящен национальной символике российского государства — полотнищу, состоящему из полос белого, синего и алого цвета
+					.col-33: .events__item
+						.events__text
+							.events__date 29 февраля 2016
+							a(href="#").events__name Поздравляем с Днем российского флага!
+							.events__desc 22 августа в России традиционно отмечают День флага. Праздник посвящен национальной символике российского государства — полотнищу, состоящему из полос белого, синего и алого цвета
+				.refresh__wrap
+					a(href="#").btn.btn--refresh
+						span Больше новостей
+
+	// ========== event end =========
+	// ========== gallary =========
+	.page__gallary
+		.container
+			h2 Фотогалерея
+			.gallary
+				ul(class="bxslider")
+					li: img(src="img/slide1.jpg").gallary__img
+					li: img(src="img/slide1.jpg").gallary__img
+					li: img(src="img/slide1.jpg").gallary__img
+					li: img(src="img/slide1.jpg").gallary__img
+					li: img(src="img/slide1.jpg").gallary__img
+					li: img(src="img/slide1.jpg").gallary__img
+				div(id="bx-pager").gallary__thumb-wrap
+					a(data-slide-index="0" href="").gallary__thumb: img(src="img/slider-thumb1.jpg")
+					a(data-slide-index="1" href="").gallary__thumb: img(src="img/slider-thumb2.jpg")
+					a(data-slide-index="2" href="").gallary__thumb: img(src="img/slider-thumb3.jpg")
+					a(data-slide-index="3" href="").gallary__thumb: img(src="img/slider-thumb4.jpg")
+					a(data-slide-index="4" href="").gallary__thumb: img(src="img/slider-thumb5.jpg")
+	// ========== gallary end =========
+	// ========== instagramm =========
+	section.page__instagram
+		.container
+			h2 Мы в instagram
+			.instagram
+				img(src="img/instagram.jpg", alt="")
+	// ========== instagramm end =========
+	// ========== history =========
+	section.page__history
+		.container
+			.history-park.color-white
+				h2 История парка
+				.history-park__text
+					p <span class="big-letter">В</span> XIV–XV вв. на месте нынешнего парка «Захарово» был густой девственный лес. В лесу проходила Стромынская дорога из Москвы  через Черкизово в село Стромынь, лежавшее в 60 км к востоку, и в
+					p город Суздаль. По преданию, по этой дороге в 1382 г., когда к Москве подходил хан Тохтамыш, ушел на север собирать войска Дмитрий Донской. В XV в. территория московских Сокольников была местом великокняжеской соколиной охоты, получившей особенно  большое распространение в XVII в.
+				a(href="#").history-park__more Подробнее
+	// ========== history end =========

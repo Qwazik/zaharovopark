@@ -1,0 +1,33 @@
+include _patterns/inner-header
+extends _patterns/inner-template
+
+block main
+	// ========= header ==========
+	+header('bg-services.jpg', 'Услуги')
+	// ========= header end ==========
+	// ========= content ==========
+	.page__content		
+		.services
+			.container
+				.row
+					.col-50: .service-item.news__item
+						img(src="img/services-item1.jpg", alt="")
+						.news__info
+							.news__name Работа театра сказок
+						.req__enter От 3 000 руб.
+					.col-50: .service-item.news__item
+						img(src="img/services-item2.jpg", alt="")
+						.news__info
+							.news__name Фитнес тренировки
+						.req__enter.free
+					.col-50: .service-item.news__item
+						img(src="img/services-item3.jpg", alt="")
+						.news__info
+							.news__name Работа театра сказок
+						.req__enter.free
+					.col-50: .service-item.news__item
+						img(src="img/services-item4.jpg", alt="")
+						.news__info
+							.news__name Фитнес тренировки
+						.req__enter.free
+	// ========= content end ==========

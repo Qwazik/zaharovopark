@@ -1,0 +1,34 @@
+include _patterns/inner-header
+extends _patterns/inner-template
+
+block main
+	// ========= header ==========
+	+header('bg-press.jpg', 'Пресса о нас')
+	// ========= header end ==========
+	// ========= content ==========
+	.page__content		
+		.container.container--small
+			article.article-item
+				span.article-item__date 13 авг. 2014 г.
+				h2.article-item__header ОТВ (Одинцовское телевидение)
+				span.article-item__subheader Международный фестиваль стола в с Захарово
+				p.article-item__desc Вековые деревья и каскад прудов создают  неповторимую атмосферу комфорта и спокойствия, кажется, что здесь природа и поэзия   сливаются  воедино,  сказка и быль, реальный мир и «зазеркалье», отраженное  гладью воды. Здесь  как-то  особенно остро  чувствуется веяние времени – история и современ-ность, раздолье и благодать.				
+				<iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" frameborder="0" allowfullscreen></iframe>
+				a(href="").article-more Подробнее
+			article.article-item
+				span.article-item__date 13 авг. 2014 г.
+				h2.article-item__header ОТВ (Одинцовское телевидение)
+				span.article-item__subheader Международный фестиваль стола в с Захарово
+				p.article-item__desc Вековые деревья и каскад прудов создают  неповторимую атмосферу комфорта и спокойствия, кажется, что здесь природа и поэзия   сливаются  воедино,  сказка и быль, реальный мир и «зазеркалье», отраженное  гладью воды. Здесь  как-то  особенно остро  чувствуется веяние времени – история и современ-ность, раздолье и благодать.
+				a(href="").article-more Подробнее
+			article.article-item
+				span.article-item__date 13 авг. 2014 г.
+				h2.article-item__header ОТВ (Одинцовское телевидение)
+				span.article-item__subheader Благоустройство захаровского парка: что сделано, а что предстоит?
+				<iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" frameborder="0" allowfullscreen></iframe>
+				p.article-item__desc Вековые деревья и каскад прудов создают  неповторимую атмосферу комфорта и спокойствия, кажется, что здесь природа и поэзия   сливаются  воедино,  сказка и быль, реальный мир и «зазеркалье», отраженное  гладью воды. Здесь  как-то  особенно остро  чувствуется веяние времени – история и современ-ность, раздолье и благодать.
+				a(href="").article-more Подробнее
+			.refresh__wrap
+				a(href="#" class="btn btn--refresh").fl-left
+					span Больше новостей
+	// ========= content end ==========

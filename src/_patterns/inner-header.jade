@@ -1,0 +1,11 @@
+mixin header(img, header)
+	.page__header.page__header--inner(style="background-image: url(img/"+img+")")
+		.container
+			.main-header.color-white
+				a(href="/").logo.main-header__logo
+					img(src="img/logo.png", alt="")
+				.main-header__text-wrap
+					.main-header__text
+						.border.border--top
+						h1=header
+						.border.border--bottom

@@ -1,0 +1,173 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$calendar-name: 'calendar';
+$calendar-x: 0px;
+$calendar-y: 0px;
+$calendar-offset-x: 0px;
+$calendar-offset-y: 0px;
+$calendar-width: 144px;
+$calendar-height: 153px;
+$calendar-total-width: 224px;
+$calendar-total-height: 153px;
+$calendar-image: '../img/icon-set.png';
+$calendar: (0px, 0px, 0px, 0px, 144px, 153px, 224px, 153px, '../img/icon-set.png', 'calendar', );
+$celsius-name: 'celsius';
+$celsius-x: 144px;
+$celsius-y: 91px;
+$celsius-offset-x: -144px;
+$celsius-offset-y: -91px;
+$celsius-width: 24px;
+$celsius-height: 24px;
+$celsius-total-width: 224px;
+$celsius-total-height: 153px;
+$celsius-image: '../img/icon-set.png';
+$celsius: (144px, 91px, -144px, -91px, 24px, 24px, 224px, 153px, '../img/icon-set.png', 'celsius', );
+$dot-name: 'dot';
+$dot-x: 202px;
+$dot-y: 63px;
+$dot-offset-x: -202px;
+$dot-offset-y: -63px;
+$dot-width: 8px;
+$dot-height: 8px;
+$dot-total-width: 224px;
+$dot-total-height: 153px;
+$dot-image: '../img/icon-set.png';
+$dot: (202px, 63px, -202px, -63px, 8px, 8px, 224px, 153px, '../img/icon-set.png', 'dot', );
+$menu-button-name: 'menu-button';
+$menu-button-x: 172px;
+$menu-button-y: 63px;
+$menu-button-offset-x: -172px;
+$menu-button-offset-y: -63px;
+$menu-button-width: 30px;
+$menu-button-height: 26px;
+$menu-button-total-width: 224px;
+$menu-button-total-height: 153px;
+$menu-button-image: '../img/icon-set.png';
+$menu-button: (172px, 63px, -172px, -63px, 30px, 26px, 224px, 153px, '../img/icon-set.png', 'menu-button', );
+$refresh-hover-name: 'refresh-hover';
+$refresh-hover-x: 168px;
+$refresh-hover-y: 91px;
+$refresh-hover-offset-x: -168px;
+$refresh-hover-offset-y: -91px;
+$refresh-hover-width: 24px;
+$refresh-hover-height: 24px;
+$refresh-hover-total-width: 224px;
+$refresh-hover-total-height: 153px;
+$refresh-hover-image: '../img/icon-set.png';
+$refresh-hover: (168px, 91px, -168px, -91px, 24px, 24px, 224px, 153px, '../img/icon-set.png', 'refresh-hover', );
+$refresh-name: 'refresh';
+$refresh-x: 192px;
+$refresh-y: 91px;
+$refresh-offset-x: -192px;
+$refresh-offset-y: -91px;
+$refresh-width: 24px;
+$refresh-height: 24px;
+$refresh-total-width: 224px;
+$refresh-total-height: 153px;
+$refresh-image: '../img/icon-set.png';
+$refresh: (192px, 91px, -192px, -91px, 24px, 24px, 224px, 153px, '../img/icon-set.png', 'refresh', );
+$search-name: 'search';
+$search-x: 144px;
+$search-y: 63px;
+$search-offset-x: -144px;
+$search-offset-y: -63px;
+$search-width: 28px;
+$search-height: 28px;
+$search-total-width: 224px;
+$search-total-height: 153px;
+$search-image: '../img/icon-set.png';
+$search: (144px, 63px, -144px, -63px, 28px, 28px, 224px, 153px, '../img/icon-set.png', 'search', );
+$weather-name: 'weather';
+$weather-x: 144px;
+$weather-y: 0px;
+$weather-offset-x: -144px;
+$weather-offset-y: 0px;
+$weather-width: 80px;
+$weather-height: 63px;
+$weather-total-width: 224px;
+$weather-total-height: 153px;
+$weather-image: '../img/icon-set.png';
+$weather: (144px, 0px, -144px, 0px, 80px, 63px, 224px, 153px, '../img/icon-set.png', 'weather', );
+$spritesheet-width: 224px;
+$spritesheet-height: 153px;
+$spritesheet-image: '../img/icon-set.png';
+$spritesheet-sprites: ($calendar, $celsius, $dot, $menu-button, $refresh-hover, $refresh, $search, $weather, );
+$spritesheet: (224px, 153px, '../img/icon-set.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

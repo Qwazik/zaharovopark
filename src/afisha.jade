@@ -1,0 +1,88 @@
+include _patterns/inner-header
+extends _patterns/inner-template
+
+block main
+	// ========= header ==========
+	+header('bg-afisha.jpg', 'Афиша')
+	// ========= header end ==========
+	// ========== news =============
+	.page__content
+		.container.preload
+			.afisha-filter
+				ul.year
+					li 2014
+					li 2015
+					li 2016
+				.month
+					span.month__current Август
+					ul.month__list
+						li: span.month__name Январь
+						li: span.month__name Февраль
+						li: span.month__name Март
+						li: span.month__name Апрель
+						li: span.month__name Май
+						li: span.month__name Июнь
+						li: span.month__name Июль
+						li: span.month__name Август
+						li: span.month__name Сентябрь
+						li: span.month__name Октябрь
+						li: span.month__name Ноябрь
+						li: span.month__name Декабрь
+			.inner-news#afisha
+				.col-33: a(href="#").news__item.mp(data-year="2016", data-month="Август")
+					img(src="img/news__image1.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок 
+						.req__enter.free
+				.col-33: a(href="#").news__item.mp(data-year="2015", data-month="Январь")
+					img(src="img/news__image2.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+						.req__enter.free
+				.col-33: a(href="#").news__item.mp(data-year="2014", data-month="Декабрь")
+					img(src="img/news__image3.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+						.req__enter От 3 000 руб.
+				.col-33: a(href="#").news__item.mp(data-year="2014", data-month="Январь")
+					img(src="img/news__image4.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+						.req__enter От 3 000 руб.
+				.col-33: a(href="#").news__item.mp(data-year="2015", data-month="Август")
+					img(src="img/news__image5.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+						.req__enter.free
+				.col-33: a(href="#").news__item.mp(data-year="2014", data-month="Январь")
+					img(src="img/news__image4.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+						.req__enter От 3 000 руб.
+				.col-33: a(href="#").news__item.mp(data-year="2016", data-month="Декабрь")
+					img(src="img/news__image5.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+						.req__enter.free
+				.col-33: a(href="#").news__item.mp(data-year="2016", data-month="Декабрь")
+					img(src="img/news__image4.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+						.req__enter От 3 000 руб.
+				.col-33: a(href="#").news__item.mp(data-year="2016", data-month="Декабрь")
+					img(src="img/news__image5.jpg", alt="")
+					.news__info
+						.news__date 14 августа, 12.00 
+						.news__name Торжественное открытие Поляны сказок
+						.req__enter.free
+	// ========== news end =========
+			
+
