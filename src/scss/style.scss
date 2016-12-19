@@ -18,7 +18,7 @@
 /*  author styles
 /*-------------------------------------------------*/
 body{
-    min-width: $container-width;
+    min-width: 1320px;
     font-family: $main-font;
     color: #525252;
 font-size: 14px;
@@ -37,6 +37,7 @@ section{
 .page{
     &__header{
         @include bg('../img/main-header__bg.jpg');
+        background-size: cover;
         min-height: 900px;
         &--inner{
             min-height: 525px;
@@ -227,7 +228,10 @@ section{
 
 .header-menu{
     &__wrap{
-        width: 100%;
+        left: 0;
+        right: 0;
+        position: absolute;
+        min-width: 1290px;
         // position: relative;
         button{
             background: none;
@@ -703,9 +707,9 @@ section{
 /*    events
 /*-------------------------------------------------*/
 .events{
+    overflow: hidden;
     &__item{
         display: block;
-        overflow: hidden;
         background-color: white;
         border: 1px solid #e6e6e6;
         margin-bottom: 40px;
@@ -1115,7 +1119,11 @@ text-decoration: none;
     padding-top: 120px;
     padding-bottom: 0;
 }
-
+.instagram{
+    img{
+        max-width: 100%;
+    }
+}
 /*-------------------------------------------------*/
 /*  helper classes
 /*-------------------------------------------------*/

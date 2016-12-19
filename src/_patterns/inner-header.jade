@@ -1,6 +1,7 @@
 mixin header(img, header)
 	.page__header.page__header--inner(style="background-image: url(img/"+img+")")
 		.container
+			include header-menu
 			.main-header.color-white
 				a(href="/").logo.main-header__logo
 					img(src="img/logo.png", alt="")
