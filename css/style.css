@@ -377,7 +377,7 @@ The `sprites` mixin generates identical output to the CSS template
 /*  author styles
 /*-------------------------------------------------*/
 body {
-  min-width: 1290px;
+  min-width: 1320px;
   font-family: "PTSerif";
   color: #525252;
   font-size: 14px; }
@@ -396,6 +396,7 @@ section {
   background-image: url("../img/main-header__bg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
   min-height: 900px; }
   .page__header--inner {
     min-height: 525px; }
@@ -565,7 +566,10 @@ section {
   top: 70px;
   right: 73px; }
   .header-menu__wrap {
-    width: 100%; }
+    left: 0;
+    right: 0;
+    position: absolute;
+    min-width: 1290px; }
     .header-menu__wrap button {
       background: none;
       border: none;
@@ -959,52 +963,49 @@ section {
 /*-------------------------------------------------*/
 /*    events
 /*-------------------------------------------------*/
-.events__item {
-  display: block;
-  overflow: hidden;
-  background-color: white;
-  border: 1px solid #e6e6e6;
-  margin-bottom: 40px;
-  padding: 35px;
-  position: relative; }
-
-.events__image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%; }
-  .events__image img {
-    min-width: 100%;
-    min-height: 100%;
-    height: auto;
-    width: auto; }
-  .events__image + .events__text {
-    color: white !important;
-    z-index: 99;
+.events {
+  overflow: hidden; }
+  .events__item {
+    display: block;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 40px;
+    padding: 35px;
     position: relative; }
-    .events__image + .events__text .events__name {
-      color: white; }
-    .events__image + .events__text .events__date {
-      color: white; }
-
-.events__date {
-  color: #7b7b7b;
-  font-family: PTSerif;
-  font-size: 13px;
-  font-style: italic;
-  margin-bottom: 10px; }
-
-.events__name {
-  text-decoration: none;
-  margin-bottom: 10px;
-  color: #050704;
-  font-size: 18px;
-  font-weight: 700;
-  display: block; }
-
-.events__desc {
-  overflow: auto; }
+  .events__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%; }
+    .events__image img {
+      min-width: 100%;
+      min-height: 100%;
+      height: auto;
+      width: auto; }
+    .events__image + .events__text {
+      color: white !important;
+      z-index: 99;
+      position: relative; }
+      .events__image + .events__text .events__name {
+        color: white; }
+      .events__image + .events__text .events__date {
+        color: white; }
+  .events__date {
+    color: #7b7b7b;
+    font-family: PTSerif;
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 10px; }
+  .events__name {
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: #050704;
+    font-size: 18px;
+    font-weight: 700;
+    display: block; }
+  .events__desc {
+    overflow: auto; }
 
 .gallary {
   position: relative; }
@@ -1302,6 +1303,9 @@ section {
 .about .col-33:nth-child(2n+1) {
   padding-top: 120px;
   padding-bottom: 0; }
+
+.instagram img {
+  max-width: 100%; }
 
 /*-------------------------------------------------*/
 /*  helper classes
