@@ -1,5 +1,48 @@
   var maxHeight = $('.events .events__item').height();
   $(document).ready(function(){
+    /*-------------------------------------------------*/
+    /*    header menu, search
+    /*-------------------------------------------------*/
+
+    $('.search-block button').click(function(){
+        var searchBlock = $(this).closest('.search-block');
+        if(!$(searchBlock).is('.active')){
+            $(this).closest('.search-block').addClass('active');
+            return false;
+        }else{
+            $(this).closest('form').submit();
+        }
+    }); 
+
+    $('.main-menu__button').click(function(){
+        toggleAct(this);
+        toggleAct('.main-menu');
+        toggleOverlay();
+    });
+
+    $('.overlay').click(function(){
+        toggleOverlay();
+        toggleAct('.main-menu__button');
+        toggleAct('.main-menu');
+    });
+
+    function toggleOverlay(){
+        var ov = $('.overlay');
+        if(ov.is(':visible')){
+            ov.fadeOut();
+        }else{
+            ov.fadeIn();
+        }
+    }
+
+    function toggleAct(e){
+        if(!$(e).is('.active')){
+            $(e).addClass('active');
+        }else{
+            $(e).removeClass('active');
+        }
+    }
+
     $('.events .events__item').each(function(){
     if(maxHeight < $(this).height()){
         maxHeight = $(this).height();

@@ -317,37 +317,49 @@ The `sprites` mixin generates identical output to the CSS template
 
 .celsius {
   background-image: url(../img/icon-set.png);
-  background-position: -144px -91px;
+  background-position: -200px -63px;
   width: 24px;
   height: 24px; }
 
 .dot {
   background-image: url(../img/icon-set.png);
-  background-position: -202px -63px;
+  background-position: -204px -91px;
   width: 8px;
   height: 8px; }
 
+.menu-button-green {
+  background-image: url(../img/icon-set.png);
+  background-position: -144px -91px;
+  width: 30px;
+  height: 26px; }
+
 .menu-button {
   background-image: url(../img/icon-set.png);
-  background-position: -172px -63px;
+  background-position: -174px -91px;
   width: 30px;
   height: 26px; }
 
 .refresh-hover {
   background-image: url(../img/icon-set.png);
-  background-position: -168px -91px;
+  background-position: -144px -117px;
   width: 24px;
   height: 24px; }
 
 .refresh {
   background-image: url(../img/icon-set.png);
-  background-position: -192px -91px;
+  background-position: -168px -117px;
   width: 24px;
   height: 24px; }
 
-.search {
+.search-green {
   background-image: url(../img/icon-set.png);
   background-position: -144px -63px;
+  width: 28px;
+  height: 28px; }
+
+.search {
+  background-image: url(../img/icon-set.png);
+  background-position: -172px -63px;
   width: 28px;
   height: 28px; }
 
@@ -447,7 +459,7 @@ section {
     content: '';
     display: inline-block;
     background-image: url(../img/icon-set.png);
-    background-position: -192px -91px;
+    background-position: -168px -117px;
     width: 24px;
     height: 24px;
     -webkit-transition: -webkit-transform .5s;
@@ -461,7 +473,7 @@ section {
     background-color: #438337; }
     .btn--refresh:hover:before, .history-park__more:hover:before {
       background-image: url(../img/icon-set.png);
-      background-position: -168px -91px;
+      background-position: -144px -117px;
       width: 24px;
       height: 24px;
       -webkit-transform: rotate(360deg);
@@ -545,6 +557,120 @@ section {
     position: relative;
     padding: 40px 0 50px;
     margin: auto; }
+
+.header-menu {
+  vertical-align: top;
+  display: inline-block;
+  position: absolute;
+  top: 70px;
+  right: 73px; }
+  .header-menu__wrap {
+    width: 100%; }
+    .header-menu__wrap button {
+      background: none;
+      border: none;
+      background-image: url(../img/icon-set.png);
+      background-position: -174px -91px;
+      width: 30px;
+      height: 26px; }
+      .header-menu__wrap button.active {
+        position: fixed;
+        background-image: url(../img/icon-set.png);
+        background-position: -144px -91px;
+        width: 30px;
+        height: 26px; }
+
+.main-menu {
+  z-index: 20;
+  text-align: right;
+  padding-top: 150px;
+  padding-right: 73px;
+  padding-left: 80px;
+  height: 2000px;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: right .5s;
+  transition: right .5s; }
+  .main-menu.active {
+    right: 0; }
+  .main-menu__button {
+    outline: none;
+    cursor: pointer;
+    z-index: 21;
+    position: relative; }
+    .main-menu__button-wrap {
+      display: inline-block;
+      width: 30px;
+      height: 26px; }
+  .main-menu__header {
+    color: #1c1a16;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 25px; }
+  .main-menu li {
+    margin-bottom: 10px; }
+  .main-menu a {
+    color: #1c1a16;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none; }
+    .main-menu a:hover {
+      color: #438337; }
+
+.overlay {
+  display: none;
+  position: fixed;
+  height: 2000px;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: .75;
+  z-index: 10; }
+
+.search-block {
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: top; }
+  .search-block:after {
+    content: '';
+    display: block;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: width .5s;
+    transition: width .5s;
+    width: 0%;
+    height: 1px;
+    background-color: #fff; }
+  .search-block__form input {
+    vertical-align: top;
+    padding-top: 3px;
+    padding-bottom: 15px;
+    display: none;
+    outline: none;
+    color: white;
+    background: none;
+    border: none; }
+  .search-block button {
+    cursor: pointer;
+    outline: none;
+    vertical-align: top;
+    background-image: url(../img/icon-set.png);
+    background-position: -172px -63px;
+    width: 28px;
+    height: 28px; }
+  .search-block.active:after {
+    width: 100%; }
+  .search-block.active input {
+    display: inline-block; }
+  .search-block.active button {
+    background-image: url(../img/icon-set.png);
+    background-position: -144px -63px;
+    width: 28px;
+    height: 28px; }
 
 /*-------------------------------------------------*/
 /*    news
