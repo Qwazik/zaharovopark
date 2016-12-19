@@ -178,10 +178,10 @@ section{
     text-align: center;
     em{
         color: #fdfcfc;
-font-family: PTSerif;
-font-size: 24px;
+        font-family: PTSerif;
+        font-size: 24px;
 
-line-height: 30px;
+        line-height: 30px;
     }
 
     &__logo{
@@ -224,6 +224,134 @@ line-height: 30px;
         margin: auto;
     }
 }
+
+.header-menu{
+    &__wrap{
+        width: 100%;
+        // position: relative;
+        button{
+            background: none;
+            border: none;
+            @include sprite($menu-button);
+            &.active{
+                position: fixed;
+                @include sprite($menu-button-green);
+            }
+        }
+    }
+    vertical-align: top;
+    display: inline-block;
+    position: absolute;
+    top: 70px;
+    right: 73px;
+}
+
+.main-menu{
+    // display: none;
+    z-index: 20;
+    text-align: right;
+    padding-top: 150px;
+    padding-right: 73px;
+    padding-left: 80px;
+    height: 2000px;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    // display: none;
+    background-color: #fff;
+    transition: right .5s;
+    &.active{
+        right: 0;
+    }
+    &__button{
+        outline: none;
+        cursor: pointer;
+        z-index: 21;
+        position: relative;
+        &-wrap{
+            display: inline-block;
+            @include sprite-width ($menu-button);
+            @include sprite-height ($menu-button);
+        }
+    }
+    &__header{
+        color: #1c1a16;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+    li{
+        margin-bottom: 10px;
+    }
+    a{
+        color: #1c1a16;
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: none;
+        &:hover{
+            color: #438337;
+        }
+    }
+}
+
+.overlay{
+    display: none;
+    position: fixed;
+    height: 2000px;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: .75;
+    z-index: 10;
+}
+.search-block{
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: top;
+    &:after{
+        content: '';
+        display: block;
+        left: 0;
+        bottom: 0;
+        transition: width .5s;
+        width: 0%;
+        height: 1px;
+        background-color: #fff;
+    }
+    &__form{
+        input{
+            vertical-align: top;
+            padding-top: 3px;
+            padding-bottom: 15px;
+            display: none;
+            outline: none;
+            color: white;
+            background: none;
+            border: none;
+            
+        }
+    }
+
+    button{
+        cursor: pointer;
+        outline: none;
+        vertical-align: top;
+        @include sprite($search);
+        
+    }
+    &.active{
+        &:after{
+            width: 100%;
+        }
+        input{
+            display: inline-block;
+        }
+        button{@include sprite($search-green);}
+    }
+}
+
 
 
 
@@ -275,7 +403,6 @@ line-height: 30px;
 
     }
     &__ico{
-
         height: 100%;
         width: 50%;
         float: right;       
