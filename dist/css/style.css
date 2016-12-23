@@ -735,6 +735,8 @@ section {
     background-color: rgba(67, 131, 55, 0.35);
     text-align: center;
     line-height: 200px; }
+    .weather-block__ico i {
+      background-position: 0 0 !important; }
 
 .main-afisha {
   right: 0;
@@ -1318,6 +1320,45 @@ section {
 
 .instagram img {
   max-width: 100%; }
+
+.instagram__header {
+  background-color: #fff;
+  background-image: url("../img/instagram-header-bg.png");
+  text-transform: uppercase;
+  color: white;
+  background-color: #4A7941;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 15px 0; }
+
+.instagram ul li {
+  float: left;
+  border: 1px solid #000;
+  width: 20%;
+  height: 258px;
+  overflow: hidden;
+  text-align: center; }
+
+.instagram ul li a {
+  display: block;
+  height: 100%;
+  width: 100%; }
+
+.instagram ul li img {
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: auto;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s; }
+
+.instagram ul li img:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05); }
 
 /*-------------------------------------------------*/
 /*  helper classes

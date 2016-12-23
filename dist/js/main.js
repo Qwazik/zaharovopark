@@ -1,6 +1,22 @@
   var maxHeight = $('.events .events__item').height();
   $(document).ready(function(){
     /*-------------------------------------------------*/
+    /*    партнеры
+    /*-------------------------------------------------*/
+    var partnersCarousel = $('#partnersCarousel').bxSlider({
+        minSlides: 4,
+        maxSlides: 4,
+        slideWidth: 314,
+        pager: false,
+        controls: false
+    });
+    $('.partners button.prev').click(function(){
+        partnersCarousel.goToPrevSlide();
+    });
+    $('.partners button.next').click(function(){
+        partnersCarousel.goToNextSlide();
+    });
+    /*-------------------------------------------------*/
     /*    header menu, search
     /*-------------------------------------------------*/
 
@@ -62,6 +78,7 @@
     var tempCelsius = null,
         geturl = 'http://api.openweathermap.org/data/2.5/forecast/city?q=Moscow&APPID=86dac10b732b3cb5a9270c46edaacf2a';
         weatherCall = $.get(geturl, function(data){
+
         var tempKelvin = data['list'][0]['main']['temp'],
             clouds = data['list'][0]['clouds'].all,
             cloudsText = '';
@@ -79,6 +96,9 @@
             case 10: cloudsText = 'Облачно'; break
         }
         tempCelsius = Math.round((tempKelvin - 273.15));
+        var icon = '/img/icons-weather/'+data['list'][0]['weather']['0']['icon']+'.png';
+        $('.weather-block__ico i').css('background-image', 'url('+icon+')');
+        console.log(icon);
         $('.weather-block__info .val').fadeIn(300);
         $('.weather-block__info .val span').text(tempCelsius);
         $('.weather-block__info .val').siblings('span').text(cloudsText);
@@ -146,18 +166,36 @@
             }
         });
     }
-    /*-------------------------------------------------*/
-    /*    instagram
-    /*-------------------------------------------------*/
-       
-});
-
-
-
-$.get('https://api.instagram.com/oauth/authorize/?client_id=59a1f437a2534e89b47b2ff37f15a1d2&redirect_uri=http://localhost:3000', function(a){
-    console.log(a);
-})
+  });
+  
 
 $(window).load(function(){
     $('.preload').fadeIn(300);
+});
+
+
+var tok = 'cdcc36d540754072aaab60caa9a72c79', 
+    userid = 2234442203, // ID пользователя, можно выкопать в исходном HTML, можно использовать спец. сервисы либо просто смотрите следующий пример :)
+    kolichestvo = 20; // ну это понятно - сколько фоток хотим вывести
+ 
+$.ajax({
+    url: 'https://api.instagram.com/v1/users/' + userid + '/media/recent',
+    dataType: 'jsonp',
+    type: 'GET',
+    data: {access_token: tok, count: kolichestvo}, // передаем параметры, которые мы указывали выше
+    success: function(result){
+        // console.log(result);
+        var instaList = $('<ul></ul>');
+        for( x in result.data ){
+            $(instaList).append('<li><a href="'+result.data[x].link+'"><img src="'+result.data[x].images.low_resolution.url+'"></a></li>'); 
+            // result.data[x].images.low_resolution.url - это URL картинки среднего разрешения, 306х306
+            // result.data[x].images.thumbnail.url - URL картинки 150х150
+            // result.data[x].images.standard_resolution.url - URL картинки 612х612
+            // result.data[x].link - URL страницы данного поста в Инстаграм 
+        }
+        $('.instagram').append(instaList);
+    },
+    error: function(result){
+        console.log(result); // пишем в консоль об ошибках
+    }
 });
