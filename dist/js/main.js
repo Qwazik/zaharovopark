@@ -146,8 +146,17 @@
             }
         });
     }
-  });
-  
+    /*-------------------------------------------------*/
+    /*    instagram
+    /*-------------------------------------------------*/
+       
+});
+
+
+
+$.get('https://api.instagram.com/oauth/authorize/?client_id=59a1f437a2534e89b47b2ff37f15a1d2&redirect_uri=http://localhost:3000', function(a){
+    console.log(a);
+})
 
 $(window).load(function(){
     $('.preload').fadeIn(300);
